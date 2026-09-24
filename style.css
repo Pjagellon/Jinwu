@@ -383,6 +383,7 @@ canvas:active {
   box-shadow: 0 0 0 2px rgba(255, 150, 190, .95), 0 0 18px 4px rgba(255, 105, 160, .55);
   opacity: var(--depthOpacity);
   animation: floatImageUp var(--duration) linear var(--delay) infinite;
+  animation-fill-mode: both;
   transform: translateX(var(--drag-x, 0px)) scale(var(--scale)) rotate(var(--rotation));
   transition: transform .15s ease-out;
 }
@@ -457,5 +458,34 @@ canvas:active {
   100% {
     opacity: 0;
     transform: translateX(0) translateY(-125vh) scale(var(--scale)) rotate(var(--rotation));
+  }
+}
+
+@media (max-width: 600px) {
+  .heartCard {
+    width: clamp(44px, 13vw, 82px);
+    height: clamp(54px, 15.5vw, 96px);
+    padding: 3px;
+    border-radius: 8px;
+  }
+
+  .heartCard img {
+    border-radius: 5px;
+  }
+
+  .floatingCard {
+    width: clamp(78px, 21vw, 94px);
+    padding: 3px;
+    border-radius: 8px;
+  }
+
+  .floatingCard img {
+    border-radius: 5px;
+  }
+
+  .floatingMessage {
+    max-width: 110px;
+    padding: 6px 8px;
+    font-size: 11px;
   }
 }
