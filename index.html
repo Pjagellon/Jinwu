@@ -740,6 +740,8 @@
     targetZ = 52;
     yaw = 0; pitch = 0;
     var backgroundMusic = document.getElementById('backgroundMusic');
+    backgroundMusic.muted = true;
+    backgroundMusic.play().catch(function () {});
     var messages = ['Hyerin?', 'Sana ma-follow back sa IG.', 'HAHAHA Salamat in advance!'];
     btn.style.opacity = 0;
     btn.style.pointerEvents = 'none';
@@ -748,7 +750,8 @@
     setTimeout(function () { setParticleText(messages[1]); }, 1800);
     setTimeout(function () { setParticleText(messages[2]); }, 3600);
     setTimeout(function () {
-      backgroundMusic.play().catch(function () {});
+      backgroundMusic.currentTime = 0;
+      backgroundMusic.muted = false;
       startPuzzle();
     }, 5400);
   }
